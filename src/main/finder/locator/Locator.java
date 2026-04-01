@@ -55,23 +55,6 @@ public class Locator {
                 for( InstancePair ip : ips) {
                     i++;
                     if(ip.bugType == BugType.NO_BUG) {
-//                        System.out.println("no bug starting at pair:" + i);
-//                        ips.remove(ip);
-//                        if(i == 1) {
-//                            NodeCounter counter = new NodeCounter();
-//                            counter.visit(aModel);
-//                            long analyseTime = System.currentTimeMillis() - beginTime;
-//                            System.out.println("type a or d bug");
-//                            System.out.printf("analyze time(sec): %.2f\n", analyseTime/1000.0);
-//                            System.out.println("# Total AST: " + counter.count);
-//                            System.out.println("LOC: " + StringUtil.countFile(path));
-//                            System.out.println("===================");
-//                            String modelname = path.substring(path.lastIndexOf("/")+1, path.length()-4);
-//                            Reportor rep = new Reportor(modelname, StringUtil.countFile(path), 0, 0, 0, counter.count, analyseTime/1000.0);
-//                            if(writeResult)
-//                                rep.writeToCSV("result.csv");
-//                            continue outloop;
-//                        }
                         if(i == 1){
                             System.out.println("No assertion violated");
                             continue outloop;

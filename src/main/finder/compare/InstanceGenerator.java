@@ -75,7 +75,7 @@ public class InstanceGenerator {
         return new InstancePair(world, counterExample, expectedInst);
     }
 
-    public List<InstancePair> genInstancePair(Command asst, Command pred, int total) throws Err{
+    public List<InstancePair>genInstancePair(Command asst, Command pred, int total) throws Err{
         A4Options opt = new A4Options();
         List<InstancePair> res = new LinkedList<>();
 
