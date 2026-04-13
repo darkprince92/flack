@@ -17,8 +17,8 @@ package edu.mit.csail.sdg.alloy4compiler.translator;
 
 import edu.mit.csail.sdg.alloy4.*;
 import edu.mit.csail.sdg.alloy4compiler.ast.*;
-import edu.mit.csail.sdg.alloy4compiler.ast.Sig.*;
 import edu.mit.csail.sdg.alloy4compiler.translator.A4Options.SatSolver;
+import flack.utility.LOGGER;
 import kodkod.ast.*;
 import kodkod.ast.Decl;
 import kodkod.ast.operator.ExprOperator;
@@ -392,7 +392,7 @@ public final class A4Solution {
                         targets[i] = t.atom(i).toString();
                     ts.add(factory.tuple(targets));
                 }
-                utility.LOGGER.logDebug(A4Solution.class, "set target " + r + " with values: " + ts.toString());
+                LOGGER.logDebug(A4Solution.class, "set target " + r + " with values: " + ts.toString());
                 bounds.setTarget(r, ts);
               //  System.out.println("set target " + r + " with values: " + ts.toString());
 //                if(sigs.contains(str)){

@@ -29,7 +29,7 @@ import kodkod.instance.Tuple;
 import kodkod.instance.TupleFactory;
 import kodkod.instance.TupleSet;
 import kodkod.util.ints.IntVector;
-import utility.LOGGER;
+import flack.utility.LOGGER;
 
 import java.util.*;
 
@@ -116,7 +116,11 @@ public final class TranslateAlloyToKodkod extends VisitReturn<Object> {
         this.s2k = ConstMap.make(s2k);
     }
 
-    /** Associate the given formula with the given expression, then return the formula as-is. */
+    public static Object execute_command(Command command, A4Options options) {
+        return null;
+    }
+
+	/** Associate the given formula with the given expression, then return the formula as-is. */
     private Formula k2pos(Formula f, Expr e) throws Err {
         if (k2pos_enabled) if (frame!=null) frame.k2pos(f, e);
         return f;

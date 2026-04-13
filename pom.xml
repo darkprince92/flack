@@ -90,11 +90,23 @@
             </plugin>
 
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>icse21</mainClass>
+                    <jvmArgs>
+                        <jvmArg>-Djava.library.path=${project.build.outputDirectory}/x86-mac</jvmArg>
+                    </jvmArgs>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>loc</mainClass>
+                            <mainClass>flack.loc</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
