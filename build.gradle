@@ -1,0 +1,58 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.gradleup.shadow' version '8.3.6'
+}
+
+group = 'unl.unsat'
+version = '1.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 8
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java', 'src/main/alloy']
+        }
+    }
+}
+
+processResources {
+    from('src/main/alloy') {
+        include 'META-INF/**'
+        include 'models/**'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'commons-cli:commons-cli:1.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+application {
+    mainClass = 'flack.main.loc'
+}
+
+run {
+    jvmArgs "-Djava.library.path=${projectDir}/solvers"
+}
+
+shadowJar {
+    archiveBaseName = 'flack'
+    archiveClassifier = 'all'
+    archiveVersion = project.version
+    manifest {
+        attributes 'Main-Class': 'flack.main.loc'
+    }
+}
