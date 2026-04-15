@@ -23,6 +23,7 @@ import com.apple.eawt.ApplicationEvent;
 import edu.mit.csail.sdg.alloy4.*;
 import edu.mit.csail.sdg.alloy4.A4Preferences.*;
 import edu.mit.csail.sdg.alloy4compiler.ast.*;
+import edu.mit.csail.sdg.alloy4compiler.ast.Module;
 import edu.mit.csail.sdg.alloy4compiler.ast.Sig.Field;
 import edu.mit.csail.sdg.alloy4compiler.parser.CompUtil;
 import edu.mit.csail.sdg.alloy4compiler.sim.SimInstance;

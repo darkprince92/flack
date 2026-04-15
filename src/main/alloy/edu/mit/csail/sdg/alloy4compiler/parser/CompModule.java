@@ -18,6 +18,7 @@ package edu.mit.csail.sdg.alloy4compiler.parser;
 import edu.mit.csail.sdg.alloy4.*;
 import edu.mit.csail.sdg.alloy4.ConstList.TempList;
 import edu.mit.csail.sdg.alloy4compiler.ast.*;
+import edu.mit.csail.sdg.alloy4compiler.ast.Module;
 import edu.mit.csail.sdg.alloy4compiler.ast.Sig.*;
 
 import java.io.FileNotFoundException;

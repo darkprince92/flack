@@ -13,7 +13,7 @@ public class DummyModel {
 		}
 
 		fact {
-			Node in List.header.*link
+			 Node in List.header.*link
 			// some l: link | l not in ~link
 		}
 
@@ -39,8 +39,8 @@ public class DummyModel {
 				.append("\n  link: lone Node")
 				.append("\n}")
 				.append("\n\nfact {")
-				.append("\n\tNode in List.header.*link")
-				// .append("\n\tsome l: link | l not in ~link")
+//				.append("\n\tNode in List.header.*link")
+//				 .append("\n\tsome l: link | l not in ~link")
 				.append("\n}")
 				.append("\n\npred Acyclic {")
 				.append("\n  no List.header or all n: Node | n not in n.^link")
@@ -56,23 +56,31 @@ public class DummyModel {
 				.append("\n}");
 
 		/*
+		assert NoCycles {
+			AcyclicWithAtoms implies Acyclic
+		}
+
+		check NoCycles
+		*/
+		alloyCode.append("\n\nassert NoCycles {")
+				.append("\n\tAcyclicWithAtoms and faultyAcyclic")
+				.append("\n}")
+				.append("\n\ncheck NoCycles");
+
+		/*
 		run FaultyWithAtoms {
 			AcyclicWithAtoms
 			faultyAcyclic
 		}
 
-		run NotFaultyWithAtoms {
-			Acyclic
-		}
+		run Acyclic
 		 */
 		alloyCode.append("\n\n")
-				.append("run FaultyWithAtoms {")
-				.append("\n\tAcyclicWithAtoms")
-				.append("\n\tfaultyAcyclic")
-				.append("\n}")
-				.append("\n\nrun NotFaultyWithAtoms {")
-				.append("\n\tAcyclic")
-				.append("\n}");
+//				.append("run FaultyWithAtoms {")
+//				.append("\n\tAcyclicWithAtoms")
+//				.append("\n\tfaultyAcyclic")
+//				.append("\n}");
+				.append("\n\nrun Acyclic");
 
 		return alloyCode.toString();
 	}

@@ -20,6 +20,8 @@ public class Demo {
 		CompModule world = CompUtil.parseEverything_fromString(null, alloyCode.toString());
 		Command faultyWithAttrCmd = world.getAllCommands().get(0);
 		Command notFaultyCmd = world.getAllCommands().get(1);
+		System.out.println("Faulty Command: " + faultyWithAttrCmd);
+		System.out.println("Not Faulty Command: " + notFaultyCmd);
 		A4Solution faultyInstance = TranslateAlloyToKodkod.execute_command(null, world.getAllSigs(), faultyWithAttrCmd, options);
 		System.out.println("Faulty Instance: ");
 		System.out.println(faultyInstance);
@@ -29,6 +31,6 @@ public class Demo {
 
 		FaultFromInstances faultFromInstances = new FaultFromInstances(alloyCode, null, world);
 		InstancePair ip = faultFromInstances.genInstancePair(faultyInstance, notFaultyCmd);
-		faultFromInstances.findFaultsFromInstancePair(ip, notFaultyCmd);
+		faultFromInstances.findFaultsFromInstancePair(ip, faultyWithAttrCmd, notFaultyCmd);
 	}
 }
