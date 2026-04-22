@@ -1,0 +1,34 @@
+# Version control
+.git/
+.gitignore
+
+# IDE artifacts
+.idea/
+*.iml
+.vscode/
+
+# Gradle local cache and daemon state
+.gradle/
+
+# Build output (regenerated in container)
+build/
+target/
+
+# AlloyFL: exclude bulk benchmark data (15MB+) and prior build output.
+# AlloyFL/build.gradle and AlloyFL/lib/ must remain (Gradle subproject config).
+AlloyFL/experiments/
+AlloyFL/build/
+
+# macOS native libraries (Linux container only needs .so files)
+*.dylib
+*.jnilib
+src/main/alloy/x86-mac/
+
+# macOS filesystem metadata
+.DS_Store
+
+# Misc
+*.tmp
+*.swp
+*.log
+result.csv

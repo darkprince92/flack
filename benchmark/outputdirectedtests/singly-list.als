@@ -28,10 +28,13 @@ pred AcyclicWithAtoms {
 	}
 }
 
-assert NoCycles {
+assert repair_assert_1 {
 	AcyclicWithAtoms implies Acyclic
 }
 
-check NoCycles
+check repair_assert_1
 
-run Acyclic
+pred repair_pred_1 {
+    AcyclicWithAtoms and Acyclic
+}
+run repair_pred_1

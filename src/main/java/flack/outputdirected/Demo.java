@@ -11,9 +11,9 @@ import flack.compare.InstancePair;
 
 public class Demo {
 	public static void main(String[] args) throws Err {
+		String path = "outputdirectedtests/singly-list.als";
 
 		A4Options options = new A4Options();
-		options.solver = A4Options.SatSolver.SAT4J;
 
 		String alloyCode = DummyModel.getAlloyCode();
 		System.out.println(alloyCode);
